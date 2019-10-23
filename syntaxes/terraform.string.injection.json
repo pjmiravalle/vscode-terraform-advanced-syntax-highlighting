@@ -3,7 +3,7 @@
 	"injectionSelector": "L:source.terraform",
 	"patterns": [
 		{
-			"match": "git::ssh://git@",
+			"match": "git::ssh://git@.*\\.git",
 			"name": "string.terraform"
 		},
 		{
