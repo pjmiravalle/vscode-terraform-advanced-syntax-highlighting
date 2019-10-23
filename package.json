@@ -1,4 +1,5 @@
 {
+	"icon": "terraform.png",
 	"name": "terraform-advanced-syntax-highlighting",
 	"displayName": "Terraform Advanced Syntax Highlighting",
 	"description": "Extends the wonderful Terraform VS Code extension by mauve, and adds in advanced syntax highlighting support for Terraform files.",
