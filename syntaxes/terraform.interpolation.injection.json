@@ -3,7 +3,7 @@
 	"injectionSelector": "L:source.terraform.embedded.source",
 	"patterns": [
 		{
-			"match": "(local|terraform|var|self|module|path|data|aws_.*?\\.)",
+			"match": "(local|terraform|var|self|module|path|data\\.|aws_.*?\\.)",
 			"name": "interpolated.variable.terraform"
 		},
 		{
