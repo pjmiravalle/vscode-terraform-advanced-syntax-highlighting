@@ -1,0 +1,42 @@
+{
+	"name": "terraform-advanced-language-support",
+	"displayName": "Terraform Advanced Language Support",
+	"description": "Extends the default grammar for terraform language support",
+	"version": "0.0.1",
+	"publisher": "Patrick Miravalle",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mauve/vscode-terraform.git"
+	},
+	"contributes": {
+		"grammars": [
+			{
+				"injectTo": [
+					"source.terraform"
+				],
+				"scopeName": "source.terraform.interpolation.injection",
+				"path": "./syntaxes/terraform.interpolation.injection.json"
+			},
+			{
+				"injectTo": [
+					"source.terraform"
+				],
+				"scopeName": "source.terraform.string.injection",
+				"path": "./syntaxes/terraform.string.injection.json"
+			},
+			{
+				"injectTo": [
+					"source.terraform"
+				],
+				"scopeName": "source.terraform.heredoc.injection",
+				"path": "./syntaxes/terraform.heredoc.injection.json"
+			}
+		]
+	}
+}

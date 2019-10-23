@@ -1,0 +1,72 @@
+{
+	"scopeName": "source.terraform.heredoc.injection",
+	"injectionSelector": "L:source.terraform",
+	"patterns": [
+		{
+			"begin": "<<POLICY|<<EOF",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator.heredoc.terraform"
+				}
+			},
+			"end": "POLICY|EOF",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.operator.heredoc.terraform"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#string_interpolation"
+				},
+				{
+					"match": "\\w|:|\\{|\\}|\\[|\\]|/|\\*|,|\"|-|!|#|\\.",
+					"name": "string.terraform"
+				}
+			]
+		}
+	],
+	"repository": {
+		"string_interpolation": {
+			"patterns": [
+				{
+					"begin": "\\$\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "entity.tag.embedded.start.terraform"
+						}
+					},
+					"end": "\\s*\\}",
+					"endCaptures": {
+						"0": {
+							"name": "entity.tag.embedded.end.terraform"
+						}
+					},
+					"name": "source.terraform.embedded.source",
+					"patterns": [
+						{
+							"include": "$self"
+						},
+						{
+							"include": "#string_interpolation_functions"
+						},
+						{
+							"include": "#string_interpolation_keywords"
+						},
+						{
+							"captures": {
+								"0": {
+									"name": "keyword.control.period.terraform"
+								}
+							},
+							"match": "(\\.)"
+						},
+						{
+							"include": "#strings"
+						}
+					]
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"scopeName": "source.terraform.interpolation.injection",
+	"injectionSelector": "L:source.terraform.embedded.source",
+	"patterns": [
+		{
+			"match": "(local|terraform|var|self|module|path|data|aws_.*?\\.)",
+			"name": "interpolated.variable.terraform"
+		},
+		{
+			"match": "[a-z]+\\(",
+			"name": "interpolated.function.begin.terraform"
+		},
+		{
+			"match": ",",
+			"name": "interpolated.function.comma.terraform"
+		},
+		{
+			"match": "\\)",
+			"name": "interpolated.function.end.terraform"
+		},
+		{
+			"match": "[a-z]|_|[0-9]",
+			"name": "interpolated.string.terraform"
+		}
+	]
+}

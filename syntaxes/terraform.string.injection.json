@@ -1,0 +1,14 @@
+{
+	"scopeName": "source.terraform.string.injection",
+	"injectionSelector": "L:source.terraform",
+	"patterns": [
+		{
+			"match": "git::ssh://git@",
+			"name": "string.terraform"
+		},
+		{
+			"match": "depends_on",
+			"name": "depends.terraform"
+		}
+	]
+}
