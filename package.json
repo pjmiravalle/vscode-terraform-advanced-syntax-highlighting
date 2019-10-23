@@ -4,7 +4,7 @@
 	"displayName": "Terraform Advanced Syntax Highlighting",
 	"description": "Extends the wonderful Terraform VS Code extension by mauve, and adds in advanced syntax highlighting support for Terraform files.",
 	"version": "0.0.1",
-	"publisher": "Patrick Miravalle",
+	"publisher": "pjmiravalle",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
