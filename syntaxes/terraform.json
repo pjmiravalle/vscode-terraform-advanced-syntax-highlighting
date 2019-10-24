@@ -153,12 +153,12 @@
     },
     {
       "captures": {
-        "0": {
+        "1": {
           "name": "variable.other.terraform"
         }
       },
       "comment": "Variables",
-      "match": "([\\w-]+)"
+      "match": "([\\w-]+)\\s\\{"
     },
     {
       "captures": {
