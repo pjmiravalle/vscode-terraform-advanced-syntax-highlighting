@@ -1,1 +1,1 @@
-# vs-code-terraform-advanced-syntax-highlighting
+# vscode-terraform-advanced-syntax-highlighting
