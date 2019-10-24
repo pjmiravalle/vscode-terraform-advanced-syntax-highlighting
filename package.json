@@ -2,8 +2,8 @@
 	"icon": "terraform.png",
 	"name": "terraform-advanced-syntax-highlighting",
 	"displayName": "Terraform Advanced Syntax Highlighting",
-	"description": "Extends the wonderful Terraform VS Code extension by mauve, and adds in advanced syntax highlighting support for Terraform files.",
-	"version": "0.0.1",
+	"description": "Advanced Syntax Highlighting for all Terraform files types.",
+	"version": "0.0.2",
 	"publisher": "pjmiravalle",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -16,27 +16,33 @@
 		"url": "https://gitlab.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting"
 	},
 	"contributes": {
+		"languages": [
+			{
+				"id": "terraform",
+				"aliases": [
+					"Terraform",
+					"terraform"
+				],
+				"extensions": [
+					".tf",
+					".tfvars",
+					".hcl"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "json",
+				"extensions": [
+					".tfstate",
+					".tpl"
+				]
+			}
+		],
 		"grammars": [
 			{
-				"injectTo": [
-					"source.terraform"
-				],
-				"scopeName": "source.terraform.interpolation.injection",
-				"path": "./syntaxes/terraform.interpolation.injection.json"
-			},
-			{
-				"injectTo": [
-					"source.terraform"
-				],
-				"scopeName": "source.terraform.string.injection",
-				"path": "./syntaxes/terraform.string.injection.json"
-			},
-			{
-				"injectTo": [
-					"source.terraform"
-				],
-				"scopeName": "source.terraform.heredoc.injection",
-				"path": "./syntaxes/terraform.heredoc.injection.json"
+				"language": "terraform",
+				"scopeName": "source.terraform",
+				"path": "./syntaxes/terraform.json"
 			}
 		]
 	}
