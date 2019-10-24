@@ -6,6 +6,11 @@
   "name": "Terraform",
   "patterns": [
     {
+      "comment": "depends_on statement",
+      "match": "depends_on",
+      "name": "keyword.operator.terraform"
+    },
+    {
       "match": "^\\s*(})",
       "name": "punctuation.definition.tag.terraform"
     },
