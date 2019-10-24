@@ -318,7 +318,7 @@
           "include": "#string_interpolation"
         },
         {
-          "match": "([\\w\\-\\/\\._\\\\%]+)",
+          "match": "([\\w\\-\\/\\._\\\\%\\\"*:\\[,{\\]}><@#?!]+)",
           "name": "string.quoted.double.terraform"
         }
       ]
