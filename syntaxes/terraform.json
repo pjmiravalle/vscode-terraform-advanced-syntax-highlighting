@@ -303,10 +303,7 @@
       "begin": "(?>\\s*<<\\s?(\\w+))",
       "beginCaptures": {
         "0": {
-          "name": "string.terraform punctuation.definition.string.begin.terraform"
-        },
-        "1": {
-          "name": "keyword.operator.heredoc.terraform"
+          "name": "string.terraform punctuation.definition.string.begin.terraform keyword.operator.heredoc.terraform"
         }
       },
       "comment": "Heredoc",
