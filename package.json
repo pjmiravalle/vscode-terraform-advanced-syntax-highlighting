@@ -21,6 +21,13 @@
 				"injectTo": [
 					"source.terraform"
 				],
+				"scopeName": "source.terraform.comment.injection",
+				"path": "./syntaxes/terraform.comment.injection.json"
+			},
+			{
+				"injectTo": [
+					"source.terraform"
+				],
 				"scopeName": "source.terraform.interpolation.injection",
 				"path": "./syntaxes/terraform.interpolation.injection.json"
 			},

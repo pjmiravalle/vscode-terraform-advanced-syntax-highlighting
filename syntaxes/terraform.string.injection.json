@@ -9,6 +9,17 @@
 		{
 			"match": "depends_on",
 			"name": "depends.terraform"
+		},
+		{
+			"match": "\\\".*(:).*\\\"",
+			"captures": {
+				"0": {
+					"name": "string.terraform"
+				},
+				"1": {
+					"name": "string.terraform"
+				}
+			}
 		}
 	]
 }

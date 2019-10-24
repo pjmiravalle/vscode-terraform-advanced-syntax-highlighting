@@ -3,9 +3,18 @@
 	"injectionSelector": "L:source.terraform",
 	"patterns": [
 		{
-			"begin": "<<POLICY|<<EOF",
+			"begin": "(^  policy (=) (<<POLICY))|(^  (policy|template) (=) (<<EOF))",
 			"beginCaptures": {
-				"0": {
+				"2": {
+					"name": "keyword.operator.terraform"
+				},
+				"3": {
+					"name": "keyword.operator.heredoc.terraform"
+				},
+				"6": {
+					"name": "keyword.operator.terraform"
+				},
+				"7": {
 					"name": "keyword.operator.heredoc.terraform"
 				}
 			},
@@ -20,7 +29,7 @@
 					"include": "#string_interpolation"
 				},
 				{
-					"match": "\\w|:|\\{|\\}|\\[|\\]|/|\\*|,|\"|-|!|#|\\.",
+					"match": "\\w|:|\\{|\\}|\\[|\\]|/|\\*|,|\"|-|!|#|\\.|>|=|'|\\|",
 					"name": "string.terraform"
 				}
 			]
