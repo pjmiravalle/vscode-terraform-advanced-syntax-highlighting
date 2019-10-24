@@ -16,34 +16,33 @@
 		"url": "https://gitlab.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting"
 	},
 	"contributes": {
+		"languages": [
+			{
+				"id": "terraform",
+				"aliases": [
+					"Terraform",
+					"terraform"
+				],
+				"extensions": [
+					".tf",
+					".tfvars",
+					".hcl"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "json",
+				"extensions": [
+					".tfstate",
+					".tpl"
+				]
+			}
+		],
 		"grammars": [
 			{
-				"injectTo": [
-					"source.terraform"
-				],
-				"scopeName": "source.terraform.comment.injection",
-				"path": "./syntaxes/terraform.comment.injection.json"
-			},
-			{
-				"injectTo": [
-					"source.terraform"
-				],
-				"scopeName": "source.terraform.interpolation.injection",
-				"path": "./syntaxes/terraform.interpolation.injection.json"
-			},
-			{
-				"injectTo": [
-					"source.terraform"
-				],
-				"scopeName": "source.terraform.string.injection",
-				"path": "./syntaxes/terraform.string.injection.json"
-			},
-			{
-				"injectTo": [
-					"source.terraform"
-				],
-				"scopeName": "source.terraform.heredoc.injection",
-				"path": "./syntaxes/terraform.heredoc.injection.json"
+				"language": "terraform",
+				"scopeName": "source.terraform",
+				"path": "./syntaxes/terraform.json"
 			}
 		]
 	}
