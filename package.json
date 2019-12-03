@@ -2,7 +2,7 @@
 	"icon": "terraform.png",
 	"name": "terraform-advanced-syntax-highlighting",
 	"displayName": "Terraform Advanced Syntax Highlighting",
-	"description": "Advanced Syntax Highlighting for all Terraform files types.",
+	"description": "Advanced Syntax Highlighting for all Terraform file types.",
 	"version": "0.0.3",
 	"publisher": "pjmiravalle",
 	"engines": {
