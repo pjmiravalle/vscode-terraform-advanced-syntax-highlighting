@@ -14,4 +14,5 @@ Want to have even further granularity with your syntax highlighting? Take a look
 
 Notice any issues, or have an idea on how this extension can improve? Please let me know!
 
-- Patrick
+Happy Coding!
+~ Patrick
