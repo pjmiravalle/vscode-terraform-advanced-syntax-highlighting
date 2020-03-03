@@ -131,7 +131,7 @@
         }
       },
       "comment": "Value assignments (left hand side not in double quotes)",
-      "match": "([\\w_-]+)\\s*(==|!=|\\|\\||&&|\\?|:|=)\\s*"
+      "match": "([\\w_-]+)\\s*(==|!=|\\|\\||&&|\\?|:|\\*|=)\\s*"
     },
     {
       "captures": {
