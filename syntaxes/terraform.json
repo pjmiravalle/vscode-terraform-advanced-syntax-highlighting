@@ -195,20 +195,20 @@
           "begin": "\\$\\{",
           "beginCaptures": {
             "0": {
-              "name": "entity.tag.embedded.begin.terraform keyword.control"
+              "name": "entity.tag.embedded.begin.terraform variable"
             }
           },
           "end": "\\s*\\}",
           "endCaptures": {
             "0": {
-              "name": "entity.tag.embedded.end.terraform keyword.control"
+              "name": "entity.tag.embedded.end.terraform variable"
             }
           },
           "name": "source.terraform.embedded.source",
           "patterns": [
             {
               "match": "(local\\.|terraform\\.|var\\.|self\\.|module\\.|path\\.|data\\.|aws_.*?\\.)",
-              "name": "keyword.control"
+              "name": "variable"
             },
             {
               "match": "[a-z]+\\(",
@@ -238,7 +238,7 @@
             {
               "captures": {
                 "0": {
-                  "name": "keyword.control.period.terraform"
+                  "name": "keyword.control.period.terraform variable"
                 }
               },
               "match": "(\\.)"
