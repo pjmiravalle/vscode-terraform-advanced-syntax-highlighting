@@ -15,6 +15,10 @@
       "name": "punctuation.definition.tag.terraform"
     },
     {
+      "match": "(local\\.|terraform\\.|var\\.|self\\.|module\\.|count\\.|path\\.|data\\.|aws_.*?\\.)",
+      "name": "keyword.operator.terraform"
+    },
+    {
       "begin": "#|//",
       "captures": {
         "0": {
