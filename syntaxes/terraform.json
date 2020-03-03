@@ -131,7 +131,7 @@
         }
       },
       "comment": "Value assignments (left hand side not in double quotes)",
-      "match": "([\\w_-]+)\\s*(=)\\s*"
+      "match": "([\\w_-]+)\\s*(==|!=|\\|\\||&&|\\?|:|=)\\s*"
     },
     {
       "captures": {
@@ -145,6 +145,9 @@
           "name": "punctuation.quote.double.terraform"
         },
         "4": {
+          "name": "keyword.operator.terraform"
+        },
+        "5": {
           "name": "keyword.operator.terraform"
         }
       },
