@@ -7,7 +7,7 @@
   "patterns": [
     {
       "comment": "Terraform 0.12 expressions",
-      "match": "(depends_on|count|for_each|dynamic)",
+      "match": "(depends_on|count|for_each|dynamic|source)",
       "name": "keyword.operator.terraform"
     },
     {
