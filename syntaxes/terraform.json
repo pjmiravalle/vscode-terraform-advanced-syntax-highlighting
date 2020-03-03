@@ -11,10 +11,6 @@
       "name": "variable"
     },
     {
-      "match": "^\\s*(})",
-      "name": "punctuation.definition.tag.terraform"
-    },
-    {
       "match": "(each\\.|local\\.|terraform\\.|var\\.|self\\.|module\\.|count\\.|path\\.|data\\.|aws_.*?\\.)",
       "name": "variable"
     },
@@ -312,14 +308,14 @@
       "begin": "(?>\\s*<<\\s?(\\w+))",
       "beginCaptures": {
         "0": {
-          "name": "string.terraform punctuation.definition.string.begin.terraform keyword.operator.heredoc.terraform support.function"
+          "name": "string.terraform punctuation.definition.string.begin.terraform keyword.operator.heredoc.terraform constant"
         }
       },
       "comment": "Heredoc",
       "end": "\\1$",
       "endCaptures": {
         "0": {
-          "name": "string.terraform punctuation.definition.string.end.terraform keyword.operator.heredoc.terraform support.function"
+          "name": "string.terraform punctuation.definition.string.end.terraform keyword.operator.heredoc.terraform constant"
         }
       },
       "patterns": [
