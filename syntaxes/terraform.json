@@ -6,8 +6,8 @@
   "name": "Terraform",
   "patterns": [
     {
-      "comment": "depends_on statement",
-      "match": "depends_on",
+      "comment": "Terraform 0.12 expressions",
+      "match": "(depends_on|count|for_each)",
       "name": "keyword.operator.terraform"
     },
     {
