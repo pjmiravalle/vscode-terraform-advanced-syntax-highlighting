@@ -7,8 +7,8 @@
   "patterns": [
     {
       "comment": "Terraform 0.12 expressions",
-      "match": "(depends_on|count|for_each|dynamic|source)",
-      "name": "keyword.operator.terraform"
+      "match": "(depends_on|for_each|dynamic)",
+      "name": "variable"
     },
     {
       "match": "^\\s*(})",
@@ -16,7 +16,7 @@
     },
     {
       "match": "(each\\.|local\\.|terraform\\.|var\\.|self\\.|module\\.|count\\.|path\\.|data\\.|aws_.*?\\.)",
-      "name": "keyword.operator.terraform"
+      "name": "variable"
     },
     {
       "begin": "#|//",
@@ -124,10 +124,10 @@
     {
       "captures": {
         "1": {
-          "name": "variable.other.assignment.terraform"
+          "name": "variable.other.assignment.terraform keyword.operator"
         },
         "2": {
-          "name": "keyword.operator.terraform"
+          "name": "variable"
         }
       },
       "comment": "Value assignments (left hand side not in double quotes)",
@@ -145,10 +145,7 @@
           "name": "punctuation.quote.double.terraform"
         },
         "4": {
-          "name": "keyword.operator.terraform"
-        },
-        "5": {
-          "name": "keyword.operator.terraform"
+          "name": "variable"
         }
       },
       "comment": "Value assignments (left hand side in double quotes)",
@@ -166,7 +163,7 @@
     {
       "captures": {
         "1": {
-          "name": "variable.other.terraform"
+          "name": "variable.other.terraform entity.name.function"
         }
       },
       "comment": "Variables",
@@ -198,32 +195,32 @@
           "begin": "\\$\\{",
           "beginCaptures": {
             "0": {
-              "name": "entity.tag.embedded.start.terraform"
+              "name": "entity.tag.embedded.begin.terraform keyword.control"
             }
           },
           "end": "\\s*\\}",
           "endCaptures": {
             "0": {
-              "name": "entity.tag.embedded.end.terraform"
+              "name": "entity.tag.embedded.end.terraform keyword.control"
             }
           },
           "name": "source.terraform.embedded.source",
           "patterns": [
             {
               "match": "(local\\.|terraform\\.|var\\.|self\\.|module\\.|path\\.|data\\.|aws_.*?\\.)",
-              "name": "interpolated.variable.terraform"
+              "name": "keyword.control"
             },
             {
               "match": "[a-z]+\\(",
-              "name": "interpolated.function.begin.terraform"
+              "name": "interpolated.function.begin.terraform support.function"
             },
             {
               "match": ",",
-              "name": "interpolated.function.comma.terraform"
+              "name": "interpolated.function.comma.terraform support.function"
             },
             {
               "match": "\\)",
-              "name": "interpolated.function.end.terraform"
+              "name": "interpolated.function.end.terraform support.function"
             },
             {
               "match": "[a-z_0-9]",
@@ -315,14 +312,14 @@
       "begin": "(?>\\s*<<\\s?(\\w+))",
       "beginCaptures": {
         "0": {
-          "name": "string.terraform punctuation.definition.string.begin.terraform keyword.operator.heredoc.terraform"
+          "name": "string.terraform punctuation.definition.string.begin.terraform keyword.operator.heredoc.terraform support.function"
         }
       },
       "comment": "Heredoc",
       "end": "\\1$",
       "endCaptures": {
         "0": {
-          "name": "string.terraform punctuation.definition.string.end.terraform keyword.operator.heredoc.terraform"
+          "name": "string.terraform punctuation.definition.string.end.terraform keyword.operator.heredoc.terraform support.function"
         }
       },
       "patterns": [
