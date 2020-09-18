@@ -45,5 +45,8 @@
 				"path": "./syntaxes/terraform.json"
 			}
 		]
+	},
+	"devDependencies": {
+		"js-yaml": "^3.14.0"
 	}
 }
