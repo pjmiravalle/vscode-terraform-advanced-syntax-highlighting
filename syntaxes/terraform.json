@@ -187,6 +187,30 @@
     }
   ],
   "repository": {
+    "strings": {
+      "comment": "Strings",
+      "begin": "\\\"",
+      "beginCaptures": {
+        "0": {
+          "name": "string.terraform punctuation.definition.string.begin.terraform"
+        }
+      },
+      "end": "\\\"",
+      "endCaptures": {
+        "0": {
+          "name": "string.terraform punctuation.definition.string.end.terraform"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#string_interpolation"
+        },
+        {
+          "name": "string.quoted.double.terraform",
+          "match": "([\\w\\-\\/\\._\\\\%:@><|?=]+)"
+        }
+      ]
+    },
     "string_interpolation": {
       "patterns": [
         {
@@ -234,19 +258,20 @@
               "include": "#string_interpolation_keywords"
             },
             {
-              "match": "(\\.)",
-              "captures": {
-                "0": {
-                  "name": "keyword.control.period.terraform variable"
-                }
-              }
-            },
-            {
               "include": "#strings"
             }
           ]
         }
       ]
+    },
+    "string_interpolation_keywords": {
+      "comment": "Terraform Keywords",
+      "captures": {
+        "0": {
+          "name": "entity.other.attribute-name.terraform"
+        }
+      },
+      "match": "(local|terraform|var|self|count|module|path|data)(\\.[\\w\\-\\*]+)+"
     },
     "string_interpolation_functions": {
       "comment": "Terraform Functions",
@@ -271,39 +296,6 @@
         },
         {
           "include": "#string_interpolation_keywords"
-        }
-      ]
-    },
-    "string_interpolation_keywords": {
-      "comment": "Terraform Keywords",
-      "captures": {
-        "0": {
-          "name": "entity.other.attribute-name.terraform"
-        }
-      },
-      "match": "(local|terraform|var|self|count|module|path|data)(\\.[\\w\\-\\*]+)+"
-    },
-    "strings": {
-      "comment": "Strings",
-      "begin": "\\\"",
-      "beginCaptures": {
-        "0": {
-          "name": "string.terraform punctuation.definition.string.begin.terraform"
-        }
-      },
-      "end": "\\\"",
-      "endCaptures": {
-        "0": {
-          "name": "string.terraform punctuation.definition.string.end.terraform"
-        }
-      },
-      "patterns": [
-        {
-          "include": "#string_interpolation"
-        },
-        {
-          "name": "string.quoted.double.terraform",
-          "match": "([\\w\\-\\/\\._\\\\%:@><|?=]+)"
         }
       ]
     },

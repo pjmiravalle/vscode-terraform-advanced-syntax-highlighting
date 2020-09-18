@@ -118,7 +118,26 @@ patterns:
 
   - include: "#strings"
   - include: "#heredoc"
+
+# The grammar file itself consists of a top-level rule. This is typically split into a patterns section
+# that lists the top-level elements of the program and a repository that defines each of the elements.
+# Other rules in the grammar can reference elements from the repository using { "include": "#id" }.
 repository:
+
+  # Strings
+  strings:
+    comment: Strings
+    begin: "\\\""
+    beginCaptures:
+      '0': {name: string.terraform punctuation.definition.string.begin.terraform}
+    end: "\\\""
+    endCaptures:
+      '0': {name: string.terraform punctuation.definition.string.end.terraform}
+    patterns:
+      - include: "#string_interpolation"
+      - name: string.quoted.double.terraform
+        # match: "(.*)"
+        match: "([\\w\\-\\/\\._\\\\%:@><|?=]+)"
 
   # String Interpolation
   string_interpolation:
@@ -160,13 +179,15 @@ repository:
           # ???
           - include: "#string_interpolation_keywords"
 
-          # Variable Period
-          - match: "(\\.)"
-            captures:
-              '0': {name: keyword.control.period.terraform variable}
-
           # ???
           - include: "#strings"
+
+  # String Interpolation Keywords
+  string_interpolation_keywords:
+    comment: Terraform Keywords
+    captures:
+      '0': {name: entity.other.attribute-name.terraform}
+    match: "(local|terraform|var|self|count|module|path|data)(\\.[\\w\\-\\*]+)+"
 
   # String Interpolation Functions
   string_interpolation_functions:
@@ -181,27 +202,6 @@ repository:
     patterns:
       - include: "$self"
       - include: "#string_interpolation_keywords"
-
-  # Terraform Keywords
-  string_interpolation_keywords:
-    comment: Terraform Keywords
-    captures:
-      '0': {name: entity.other.attribute-name.terraform}
-    match: "(local|terraform|var|self|count|module|path|data)(\\.[\\w\\-\\*]+)+"
-
-  # Strings
-  strings:
-    comment: Strings
-    begin: "\\\""
-    beginCaptures:
-      '0': {name: string.terraform punctuation.definition.string.begin.terraform}
-    end: "\\\""
-    endCaptures:
-      '0': {name: string.terraform punctuation.definition.string.end.terraform}
-    patterns:
-      - include: "#string_interpolation"
-      - name: string.quoted.double.terraform
-        match: "([\\w\\-\\/\\._\\\\%:@><|?=]+)"
 
   # Heredocs
   heredoc:
