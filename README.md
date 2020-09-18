@@ -1,6 +1,6 @@
 # What does this extension do?
 
-Dramatically improves Terraform Syntax Highlighting support (0.12 now supported!).
+Dramatically improves Terraform Syntax Highlighting support.
 
 There are "Textmate Scopes" that your theme uses to apply syntax highlighting, and this extension improves these scopes, while adding some additional scopes to ultimately improve your syntax highlighting.
 
