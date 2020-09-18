@@ -1,14 +1,12 @@
 {
-  "uuid": "9060ca81-906d-4f19-a91a-159f4eb119d6",
-  "name": "Terraform",
-  "scopeName": "source.terraform",
   "fileTypes": [
     "tf",
     "tfvars"
   ],
+  "name": "Terraform",
   "patterns": [
     {
-      "comment": "Terraform Expressions",
+      "comment": "Terraform 0.12 expressions",
       "match": "(depends_on|for_each)",
       "name": "variable"
     },
@@ -34,17 +32,17 @@
           "name": "punctuation.definition.comment.terraform"
         }
       },
-      "comment": "Multi Line Comments",
+      "comment": "Block comments",
       "end": "\\*/",
       "name": "comment.block.terraform"
     },
     {
-      "comment": "Constants",
+      "comment": "Language constants (true, false, yes, no, on, off)",
       "match": "\\b(true|false|yes|no|on|off)\\b",
       "name": "constant.language.terraform"
     },
     {
-      "comment": "Primitive Types",
+      "comment": "Primitive types",
       "match": "\\b(string|number|bool)\\b",
       "name": "support.type.primitive.terraform"
     },
@@ -54,13 +52,11 @@
       "name": "constant.numeric.terraform"
     },
     {
-      "comment": "Hex Numbers",
+      "comment": "Hex numbers",
       "match": "\\b(0x[0-9A-Fa-f]+)([kKmMgG]b?)?\\b",
       "name": "constant.numeric.terraform"
     },
     {
-      "name": "meta.resource.terraform",
-      "match": "(resource|data)\\s+(\")?(\\w+)(\")?\\s+(\")?([\\w\\-]+)(\")?\\s+({)",
       "captures": {
         "1": {
           "name": "storage.type.function.terraform"
@@ -86,10 +82,11 @@
         "8": {
           "name": "punctuation.definition.tag.terraform"
         }
-      }
+      },
+      "match": "(resource|data)\\s+(\")?(\\w+)(\")?\\s+(\")?([\\w\\-]+)(\")?\\s+({)",
+      "name": "meta.resource.terraform"
     },
     {
-      "match": "(provider|provisioner|variable|output|module|atlas)\\s+(\")?([\\w\\-]+)(\")?\\s+({)",
       "captures": {
         "1": {
           "name": "storage.type.function.terraform"
@@ -106,10 +103,10 @@
         "5": {
           "name": "punctuation.definition.tag.terraform"
         }
-      }
+      },
+      "match": "(provider|provisioner|variable|output|module|atlas)\\s+(\")?([\\w\\-]+)(\")?\\s+({)"
     },
     {
-      "match": "(locals|terraform)\\s+({)",
       "captures": {
         "1": {
           "name": "storage.type.function.terraform"
@@ -117,11 +114,10 @@
         "2": {
           "name": "punctuation.definition.tag.terraform"
         }
-      }
+      },
+      "match": "(locals|terraform)\\s+({)"
     },
     {
-      "comment": "Value assignments (left hand side not in double quotes)",
-      "match": "([\\w_-]+)\\s*(==|!=|\\|\\||&&|\\?|:|\\*|=)\\s*",
       "captures": {
         "1": {
           "name": "variable.other.assignment.terraform keyword.operator"
@@ -129,11 +125,11 @@
         "2": {
           "name": "variable"
         }
-      }
+      },
+      "comment": "Value assignments (left hand side not in double quotes)",
+      "match": "([\\w_-]+)\\s*(==|!=|\\|\\||&&|\\?|:|\\*|=)\\s*"
     },
     {
-      "comment": "Value assignments (left hand side in double quotes)",
-      "match": "(\")([\\w_-]+)(\")\\s*(=)\\s*",
       "captures": {
         "1": {
           "name": "punctuation.quote.double.terraform"
@@ -147,29 +143,29 @@
         "4": {
           "name": "variable"
         }
-      }
+      },
+      "comment": "Value assignments (left hand side in double quotes)",
+      "match": "(\")([\\w_-]+)(\")\\s*(=)\\s*"
     },
     {
-      "comment": "Function Calls",
-      "match": "([\\w-]+)\\s*\\(",
       "captures": {
-        "1": {
+        "0": {
           "name": "entity.name.function.terraform"
         }
-      }
+      },
+      "comment": "Function Calls",
+      "match": "([\\w-]+)\\s*\\("
     },
     {
-      "comment": "Variables",
-      "match": "([\\w-]+)\\s\\{",
       "captures": {
         "1": {
           "name": "variable.other.terraform entity.name.function"
         }
-      }
+      },
+      "comment": "Variables",
+      "match": "([\\w-]+)\\s\\{"
     },
     {
-      "comment": "Maps",
-      "match": "([\\w\\-_]+)\\s+({)",
       "captures": {
         "1": {
           "name": "entity.name.section.terraform"
@@ -177,7 +173,9 @@
         "2": {
           "name": "punctuation.definition.tag.terraform"
         }
-      }
+      },
+      "comment": "Maps",
+      "match": "([\\w\\-_]+)\\s+({)"
     },
     {
       "include": "#strings"
@@ -190,7 +188,6 @@
     "string_interpolation": {
       "patterns": [
         {
-          "name": "source.terraform.embedded.source",
           "begin": "\\$\\{",
           "beginCaptures": {
             "0": {
@@ -203,26 +200,27 @@
               "name": "entity.tag.embedded.end.terraform variable"
             }
           },
+          "name": "source.terraform.embedded.source",
           "patterns": [
             {
-              "name": "variable",
-              "match": "(local\\.|terraform\\.|var\\.|self\\.|module\\.|path\\.|data\\.|aws_.*?\\.)"
+              "match": "(local\\.|terraform\\.|var\\.|self\\.|module\\.|path\\.|data\\.|aws_.*?\\.)",
+              "name": "variable"
             },
             {
-              "name": "interpolated.function.begin.terraform support.function",
-              "match": "[a-z]+\\("
+              "match": "[a-z]+\\(",
+              "name": "interpolated.function.begin.terraform support.function"
             },
             {
-              "name": "interpolated.function.comma.terraform support.function",
-              "match": ","
+              "match": ",",
+              "name": "interpolated.function.comma.terraform support.function"
             },
             {
-              "name": "interpolated.function.end.terraform support.function",
-              "match": "\\)"
+              "match": "\\)",
+              "name": "interpolated.function.end.terraform support.function"
             },
             {
-              "name": "interpolated.string.terraform",
-              "match": "[a-z_0-9]"
+              "match": "[a-z_0-9]",
+              "name": "interpolated.string.terraform"
             },
             {
               "include": "$self"
@@ -234,12 +232,12 @@
               "include": "#string_interpolation_keywords"
             },
             {
-              "match": "(\\.)",
               "captures": {
                 "0": {
                   "name": "keyword.control.period.terraform variable"
                 }
-              }
+              },
+              "match": "(\\.)"
             },
             {
               "include": "#strings"
@@ -249,7 +247,6 @@
       ]
     },
     "string_interpolation_functions": {
-      "comment": "Terraform Functions",
       "begin": "(base64decode|base64encode|base64sha256|ceil|cidrnetmask|compact|distinct|file|floor|keys|length|lower|md5|pathexpand|replace|sha1|sha256|signum|sort|timestamp|title|trimspace|upper|uuid|values|cidrhost|cidrsubnet|coalesce|concat|element|format|formatlist|from|index|join|jsonencode|length|list|lookup|map|max|merge|min|slice|split|substr|zipmap)(\\()",
       "beginCaptures": {
         "1": {
@@ -259,6 +256,7 @@
           "name": "keyword.other.section.begin.terraform"
         }
       },
+      "comment": "Builtin functions",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -275,7 +273,6 @@
       ]
     },
     "string_interpolation_keywords": {
-      "comment": "Terraform Keywords",
       "captures": {
         "0": {
           "name": "entity.other.attribute-name.terraform"
@@ -284,13 +281,13 @@
       "match": "(local|terraform|var|self|count|module|path|data)(\\.[\\w\\-\\*]+)+"
     },
     "strings": {
-      "comment": "Strings",
       "begin": "\\\"",
       "beginCaptures": {
         "0": {
           "name": "string.terraform punctuation.definition.string.begin.terraform"
         }
       },
+      "comment": "Strings",
       "end": "\\\"",
       "endCaptures": {
         "0": {
@@ -302,19 +299,19 @@
           "include": "#string_interpolation"
         },
         {
-          "name": "string.quoted.double.terraform",
-          "match": "([\\w\\-\\/\\._\\\\%:@><|?=]+)"
+          "match": "([\\w\\-\\/\\._\\\\%:@><|?=]+)",
+          "name": "string.quoted.double.terraform"
         }
       ]
     },
     "heredoc": {
-      "comment": "Heredoc",
       "begin": "(?>\\s*<<\\s?(\\w+))",
       "beginCaptures": {
         "0": {
           "name": "string.terraform punctuation.definition.string.begin.terraform keyword.operator.heredoc.terraform constant"
         }
       },
+      "comment": "Heredoc",
       "end": "\\1$",
       "endCaptures": {
         "0": {
@@ -326,10 +323,12 @@
           "include": "#string_interpolation"
         },
         {
-          "name": "string.quoted.double.terraform",
-          "match": "([\\w\\-\\/\\._\\\\%\\\"*:\\[,{\\]}><@#?!]+)"
+          "match": "([\\w\\-\\/\\._\\\\%\\\"*:\\[,{\\]}><@#?!]+)",
+          "name": "string.quoted.double.terraform"
         }
       ]
     }
-  }
+  },
+  "scopeName": "source.terraform",
+  "uuid": "9060ca81-906d-4f19-a91a-159f4eb119d6"
 }
