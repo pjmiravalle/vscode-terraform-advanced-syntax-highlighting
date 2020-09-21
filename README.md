@@ -1,14 +1,17 @@
-# What does this extension do?
+# Features
 
-Dramatically improves Terraform Syntax Highlighting support.
+Dramatically improves syntax highlighting for Terraform `.tf` and `.tfvars` files (**including all syntax changes new to Terraform 0.12**).
 
-There are "Textmate Scopes" that your theme uses to apply syntax highlighting, and this extension improves these scopes, while adding some additional scopes to ultimately improve your syntax highlighting.
+## Before / After
+
+<img alt="Terraform Syntax Highlighting - BEFORE" src="image-before.png">
+<img alt="Terraform Syntax Highlighting - AFTER" src="image-after.png">
 
 ## How do you use it?
 
 Most themes are supported by default. Just install this VS Code extension and you'll immediately notice improved syntax highlighting for your Terraform files.
 
-Want to have even further granularity with your syntax highlighting? Take a look at the following guide: https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide.
+If you do notice an issue with your theme, please take a look at the following guide: https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide.
 
 ## Improvements
 
