@@ -1,1 +1,2 @@
-terraform-advanced-syntax-highlighting-*.vsix
+*.vsix
+node_modules
