@@ -8,12 +8,26 @@
 	"engines": {
 		"vscode": "^1.39.0"
 	},
+	"bugs": {
+		"url": "https://github.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting/issues",
+		"email": "4603979+pjmiravalle@users.noreply.github.com"
+	},
 	"categories": [
-		"Programming Languages"
+		"Programming Languages",
+		"Other",
+		"Formatters",
+		"Linters"
+	],
+	"keywords": [
+		"devops",
+		"terraform",
+		"terraform syntax highlighting",
+		"syntax highlighting",
+		"hcl"
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://gitlab.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting"
+		"url": "https://github.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting"
 	},
 	"contributes": {
 		"languages": [
