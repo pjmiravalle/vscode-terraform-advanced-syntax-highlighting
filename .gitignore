@@ -1,2 +1,4 @@
-terraform-advanced-syntax-highlighting-*.vsix
+*.vsix
 node_modules
+.vscode
+.vscode/launch.json
