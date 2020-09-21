@@ -41,12 +41,9 @@
 		"grammars": [
 			{
 				"language": "terraform",
-				"scopeName": "source.terraform",
+				"scopeName": "scope.terraform",
 				"path": "./syntaxes/terraform.json"
 			}
 		]
-	},
-	"devDependencies": {
-		"js-yaml": "^3.14.0"
 	}
 }
