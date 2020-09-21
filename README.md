@@ -4,7 +4,7 @@ Dramatically improves syntax highlighting for Terraform `.tf` and `.tfvars` file
 
 ## Before (with Hashicorp Terraform Extension)
 
-<img alt="Terraform Syntax Highlighting - BEFORE" src="image-before.png">\
+<img alt="Terraform Syntax Highlighting - BEFORE" src="image-before.png">
 
 ## After (with this extension)
 <img alt="Terraform Syntax Highlighting - AFTER" src="image-after.png">
