@@ -1,4 +1,2 @@
 *.vsix
 node_modules
-.vscode
-.vscode/launch.json
