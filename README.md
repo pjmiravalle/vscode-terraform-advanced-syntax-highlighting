@@ -2,7 +2,7 @@
 
 Dramatically improves syntax highlighting for Terraform `.tf` and `.tfvars` files (**including all syntax changes new to Terraform 0.12**).
 
-## Before / After
+## Before (with Hashicorp Terraform Extension) / After (with this extension)
 
 <img alt="Terraform Syntax Highlighting - BEFORE" src="image-before.png">
 <img alt="Terraform Syntax Highlighting - AFTER" src="image-after.png">
