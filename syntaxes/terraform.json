@@ -612,7 +612,8 @@
         },
         {
           "match": "\\:",
-          "name": "keyword.operator.terraform keyword.control.terraform"
+          "comment": ": keyword",
+          "name": "keyword.control.terraform"
         },
         {
           "include": "#expressions"
