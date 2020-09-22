@@ -390,6 +390,10 @@
         {
           "match": "\\.\\.\\.",
           "name": "keyword.control.terraform"
+        },
+        {
+          "match": "\\:",
+          "name": "keyword.control.terraform"
         }
       ]
     },
@@ -558,11 +562,6 @@
           "match": "\\bif\\b",
           "comment": "if keyword",
           "name": "keyword.control.conditional.terraform"
-        },
-        {
-          "match": "\\:",
-          "comment": ": keyword",
-          "name": "keyword.control.terraform"
         },
         {
           "include": "#expressions"
