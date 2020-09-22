@@ -42,7 +42,7 @@
       "name": "support.constant.terraform variable"
     },
     "local_identifiers": {
-      "match": "\\b(?!null|false|true)[[:alpha:]][[:alnum:]_-]*\\b",
+      "match": "\\b(?!null|false|true|for|in)[[:alpha:]][[:alnum:]_-]*\\b",
       "comment": "Local Identifiers",
       "name": "variable.other.readwrite.terraform"
     },
@@ -103,7 +103,7 @@
       }
     },
     "block": {
-      "name": "meta.block.terraform variable",
+      "name": "meta.block.terraform",
       "begin": "(\\w+)(?:([\\s\\\"\\-[:word:]]*)(\\{))",
       "beginCaptures": {
         "1": {
