@@ -781,6 +781,9 @@
         },
         {
           "include": "#comma"
+        },
+        {
+          "include": "#local_identifiers"
         }
       ]
     },
