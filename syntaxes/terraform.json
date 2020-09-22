@@ -148,6 +148,9 @@
         },
         {
           "include": "#expressions"
+        },
+        {
+          "include": "#local_identifiers"
         }
       ]
     },
@@ -410,7 +413,7 @@
           "name": "punctuation.section.brackets.end.terraform keyword.operator"
         },
         "1": {
-          "name": "keyword.operator.splat.terraform"
+          "name": "keyword.operator.splat.terraform constant.terraform"
         }
       },
       "patterns": [
@@ -584,7 +587,7 @@
           "name": "keyword.operator.accessor.terraform variable"
         }
       },
-      "end": "\\w+(\\[[0-9\\*]+\\])?",
+      "end": "\\w+",
       "endCaptures": {
         "0": {
           "patterns": [
