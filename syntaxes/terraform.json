@@ -160,12 +160,6 @@
           "include": "#operators"
         },
         {
-          "include": "#tuple_for_expression"
-        },
-        {
-          "include": "#object_for_expression"
-        },
-        {
           "include": "#brackets"
         },
         {
@@ -338,6 +332,10 @@
           "name": "keyword.control.terraform"
         },
         {
+          "match": "\\=\\>",
+          "name": "storage.type.function.terraform"
+        },
+        {
           "match": "\\=\\=",
           "name": "keyword.control.terraform"
         },
@@ -392,10 +390,6 @@
         {
           "match": "\\.\\.\\.",
           "name": "keyword.control.terraform"
-        },
-        {
-          "match": "\\:",
-          "scope": "keyword.control.terraform"
         }
       ]
     },
@@ -421,6 +415,9 @@
         },
         {
           "include": "#comments"
+        },
+        {
+          "include": "#for_expressions"
         },
         {
           "include": "#expressions"
@@ -449,14 +446,14 @@
           "include": "#comments"
         },
         {
-          "match": "\\b((?!null|false|true)[[:alpha:]][[:alnum:]_-]*)\\s*(\\=)\\s*",
+          "match": "\\b((?!null|false|true)[[:alpha:]][[:alnum:]_-]*)\\s*(\\s\\=\\s)\\s*",
           "comment": "Literal, named object key",
           "captures": {
             "1": {
               "name": "meta.mapping.key.terraform string.unquoted.terraform keyword.operator"
             },
             "2": {
-              "name": "variable"
+              "name": "variable test123"
             }
           }
         },
@@ -514,6 +511,9 @@
         },
         {
           "include": "#object_key_values"
+        },
+        {
+          "include": "#for_expressions"
         }
       ]
     },
@@ -529,12 +529,6 @@
           "include": "#operators"
         },
         {
-          "include": "#tuple_for_expression"
-        },
-        {
-          "include": "#object_for_expression"
-        },
-        {
           "include": "#heredoc"
         },
         {
@@ -548,58 +542,13 @@
         }
       ]
     },
-    "tuple_for_expression": {
-      "begin": "(\\[)\\s?(for)\\b",
-      "beginCaptures": {
-        "1": {
-          "name": "punctuation.section.brackets.begin.terraform keyword.operator"
-        },
-        "2": {
-          "comment": "for expression (tuple)",
-          "name": "keyword.control.terraform"
-        }
-      },
-      "end": "\\]",
-      "endCaptures": {
-        "0": {
-          "name": "punctuation.section.brackets.end.terraform keyword.operator"
-        }
-      },
+    "for_expressions": {
       "patterns": [
         {
-          "include": "#for_expression_body"
-        }
-      ]
-    },
-    "object_for_expression": {
-      "begin": "(\\{)\\s?(for)\\b",
-      "beginCaptures": {
-        "1": {
-          "name": "punctuation.section.braces.begin.terraform"
+          "match": "for",
+          "comment": "for keyword",
+          "name": "keyword.operator.word.terraform keyword.control.terraform"
         },
-        "2": {
-          "comment": "for expression (object)",
-          "name": "keyword.control.terraform"
-        }
-      },
-      "end": "\\}",
-      "endCaptures": {
-        "0": {
-          "name": "punctuation.section.braces.end.terraform"
-        }
-      },
-      "patterns": [
-        {
-          "match": "\\=\\>",
-          "name": "storage.type.function.terraform"
-        },
-        {
-          "include": "#for_expression_body"
-        }
-      ]
-    },
-    "for_expression_body": {
-      "patterns": [
         {
           "match": "\\bin\\b",
           "comment": "in keyword",
