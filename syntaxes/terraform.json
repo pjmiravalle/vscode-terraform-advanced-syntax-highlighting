@@ -603,7 +603,7 @@
         {
           "match": "\\bin\\b",
           "comment": "in keyword",
-          "name": "keyword.operator.word.terraform"
+          "name": "keyword.operator.word.terraform keyword.control.terraform"
         },
         {
           "match": "\\bif\\b",
@@ -612,7 +612,7 @@
         },
         {
           "match": "\\:",
-          "name": "keyword.operator.terraform"
+          "name": "keyword.operator.terraform keyword.control.terraform"
         },
         {
           "include": "#expressions"
