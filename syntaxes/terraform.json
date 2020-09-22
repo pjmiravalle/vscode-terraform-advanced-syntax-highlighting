@@ -453,7 +453,7 @@
               "name": "meta.mapping.key.terraform string.unquoted.terraform keyword.operator"
             },
             "2": {
-              "name": "variable test123"
+              "name": "variable"
             }
           }
         },
