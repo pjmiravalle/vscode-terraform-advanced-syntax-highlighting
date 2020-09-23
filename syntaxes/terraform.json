@@ -634,13 +634,13 @@
               "name": "punctuation.section.parens.begin.terraform"
             },
             "3": {
-              "name": "punctuation.section.braces.begin.terraform"
+              "name": "punctuation.section.braces.begin.terraform keyword.operator"
             }
           },
           "end": "(\\})(\\))",
           "endCaptures": {
             "1": {
-              "name": "punctuation.section.braces.end.terraform"
+              "name": "punctuation.section.braces.end.terraform keyword.operator"
             },
             "2": {
               "name": "punctuation.section.parens.end.terraform"
