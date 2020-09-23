@@ -624,7 +624,7 @@
       "patterns": [
         {
           "begin": "(object)(\\()(\\{)\\s*",
-          "name": "meta.function-call.terraform",
+          "name": "meta.function-call.terraform support.function.builtin.terraform",
           "comment": "Object structural type",
           "beginCaptures": {
             "1": {
@@ -656,10 +656,10 @@
               "name": "variable.declaration.terraform",
               "captures": {
                 "1": {
-                  "name": "variable.other.readwrite.terraform"
+                  "name": "keyword.operator"
                 },
                 "2": {
-                  "name": "keyword.operator.assignment.terraform"
+                  "name": "keyword.operator.assignment.terraform variable"
                 }
               }
             },
