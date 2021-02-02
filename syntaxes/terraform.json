@@ -39,17 +39,17 @@
     "named_value_references": {
       "match": "\\b(var|local|module|data|path|terraform)\\b",
       "comment": "Constant values available only to Terraform.",
-      "name": "support.constant.terraform variable"
+      "name": "variable.other.readwrite.terraform constant.language.terraform"
     },
     "local_identifiers": {
       "match": "\\b(?!null|false|true|for|in)[[:alpha:]][[:alnum:]_-]*\\b",
       "comment": "Local Identifiers",
-      "name": "variable.other.readwrite.terraform"
+      "name": "variable.other.readwrite.terraform constant.language.terraform"
     },
     "terraform_type_keywords": {
       "match": "\\b(any|string|number|bool)\\b",
       "comment": "Type keywords known to Terraform.",
-      "name": "constant"
+      "name": "constant.language.terraform"
     },
     "comments": {
       "patterns": [
@@ -89,16 +89,16 @@
       "name": "variable.declaration.terraform",
       "captures": {
         "1": {
-          "name": "punctuation.section.parens.begin.terraform"
+          "name": "punctuation.section.parens.begin.terraform meta.template.expression.terraform"
         },
         "2": {
-          "name": "variable.other.readwrite.terraform keyword.operator"
+          "name": "variable.other.property.terraform"
         },
         "3": {
-          "name": "punctuation.section.parens.end.terraform"
+          "name": "punctuation.section.parens.end.terraform meta.template.expression.terraform"
         },
         "4": {
-          "name": "keyword.operator.assignment.terraform variable"
+          "name": "keyword.operator.assignment.terraform"
         }
       }
     },
@@ -110,12 +110,12 @@
           "patterns": [
             {
               "match": "\\b(?:resource|provider|variable|output|locals|module|data|terraform)\\b",
-              "name": "storage.type.terraform storage.type.function"
+              "name": "entity.name.type.terraform"
             },
             {
               "match": "\\b(?!null|false|true)[[:alpha:]][[:alnum:]_-]*\\b",
               "comment": "Identifer label",
-              "name": "entity.name.label.terraform entity.name.function"
+              "name": "entity.name.type.terraform"
             }
           ]
         },
@@ -127,13 +127,13 @@
           ]
         },
         "3": {
-          "name": "punctuation.section.block.begin.terraform keyword.operator"
+          "name": "punctuation.section.block.begin.terraform"
         }
       },
       "end": "\\}",
       "endCaptures": {
         "0": {
-          "name": "punctuation.section.block.end.terraform keyword.operator"
+          "name": "punctuation.section.block.end.terraform"
         }
       },
       "patterns": [
@@ -266,13 +266,13 @@
       "name": "meta.interpolation.terraform",
       "beginCaptures": {
         "0": {
-          "name": "keyword.other.interpolation.begin.terraform variable"
+          "name": "keyword.other.interpolation.begin.terraform constant.language.terraform"
         }
       },
       "end": "\\}",
       "endCaptures": {
         "0": {
-          "name": "keyword.other.interpolation.end.terraform variable"
+          "name": "keyword.other.interpolation.end.terraform constant.language.terraform"
         }
       },
       "patterns": [
@@ -305,17 +305,17 @@
       "name": "string.unquoted.heredoc.terraform",
       "beginCaptures": {
         "1": {
-          "name": "keyword.operator.heredoc.terraform constant"
+          "name": "keyword.control.heredoc.terraform"
         },
         "2": {
-          "name": "keyword.control.heredoc.terraform constant"
+          "name": "keyword.control.heredoc.terraform"
         }
       },
       "end": "^\\s*\\2\\s*$",
       "endCaptures": {
         "0": {
           "comment": "The heredoc token identifier (second capture above).",
-          "name": "keyword.control.heredoc.terraform constant"
+          "name": "keyword.control.heredoc.terraform"
         }
       },
       "patterns": [
@@ -410,13 +410,13 @@
       "begin": "\\[",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.section.brackets.begin.terraform keyword.operator"
+          "name": "punctuation.section.brackets.begin.terraform meta.template.expression.terraform"
         }
       },
       "end": "(\\*?)\\]",
       "endCaptures": {
         "0": {
-          "name": "punctuation.section.brackets.end.terraform keyword.operator"
+          "name": "punctuation.section.brackets.end.terraform meta.template.expression.terraform"
         },
         "1": {
           "name": "keyword.operator.splat.terraform constant.terraform"
@@ -441,17 +441,17 @@
       ]
     },
     "objects": {
-      "name": "meta.braces.terraform keyword.operator",
+      "name": "meta.braces.terraform",
       "begin": "\\{",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.section.braces.begin.terraform keyword.operator"
+          "name": "punctuation.section.braces.begin.terraform"
         }
       },
       "end": "\\}",
       "endCaptures": {
         "0": {
-          "name": "punctuation.section.braces.end.terraform keyword.operator"
+          "name": "punctuation.section.braces.end.terraform"
         }
       },
       "patterns": [
@@ -463,7 +463,7 @@
           "comment": "Literal, named object key",
           "captures": {
             "1": {
-              "name": "meta.mapping.key.terraform string.unquoted.terraform keyword.operator"
+              "name": "variable.other.property.terraform"
             },
             "2": {
               "name": "variable"
@@ -501,13 +501,13 @@
           "name": "meta.mapping.key.terraform",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.parens.begin.terraform"
+              "name": "punctuation.section.parens.begin.terraform meta.template.expression.terraform"
             }
           },
           "end": "(\\))\\s*(\\=)\\s*",
           "endCaptures": {
             "1": {
-              "name": "punctuation.section.parens.end.terraform"
+              "name": "punctuation.section.parens.end.terraform meta.template.expression.terraform"
             },
             "2": {
               "name": "keyword.operator.terraform"
@@ -590,7 +590,7 @@
       "begin": "\\.",
       "beginCaptures": {
         "0": {
-          "name": "keyword.operator.accessor.terraform variable"
+          "name": "keyword.operator.accessor.terraform"
         }
       },
       "end": "[\\w_-]+",
@@ -600,7 +600,7 @@
             {
               "match": "\\b(?!null|false|true)[\\w_-]*\\b",
               "comment": "Attribute access",
-              "name": "variable.other.member.terraform keyword.operator test123abc"
+              "name": "variable.other.member.terraform"
             }
           ]
         },
@@ -624,7 +624,6 @@
       "patterns": [
         {
           "begin": "(object)(\\()(\\{)\\s*",
-          "name": "meta.function-call.terraform support.function.builtin.terraform",
           "comment": "Object structural type",
           "beginCaptures": {
             "1": {
@@ -634,19 +633,25 @@
               "name": "punctuation.section.parens.begin.terraform"
             },
             "3": {
-              "name": "punctuation.section.braces.begin.terraform keyword.operator"
+              "name": "punctuation.section.braces.begin.terraform"
             }
           },
           "end": "(\\})(\\))",
           "endCaptures": {
             "1": {
-              "name": "punctuation.section.braces.end.terraform keyword.operator"
+              "name": "punctuation.section.braces.end.terraform"
             },
             "2": {
               "name": "punctuation.section.parens.end.terraform"
             }
           },
           "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#functions"
+            },
             {
               "include": "#comma"
             },
@@ -656,10 +661,10 @@
               "name": "variable.declaration.terraform",
               "captures": {
                 "1": {
-                  "name": "keyword.operator"
+                  "name": "variable.other.property.terraform"
                 },
                 "2": {
-                  "name": "keyword.operator.assignment.terraform variable"
+                  "name": "keyword.operator.assignment.terraform"
                 }
               }
             },
@@ -711,7 +716,7 @@
         "1": {
           "patterns": [
             {
-              "match": "abs|ceil|floor|log|max|min|pow|signum|chomp|format|formatlist|indent|join|lower|regex|regexall|replace|split|strrev|substr|title|trimspace|upper|chunklist|coalesce|coalescelist|compact|concat|contains|distinct|element|flatten|index|keys|length|list|lookup|map|matchkeys|merge|range|reverse|setintersection|setproduct|setunion|slice|sort|transpose|values|zipmap|base64decode|base64encode|base64gzip|csvdecode|jsondecode|jsonencode|urlencode|yamldecode|yamlencode|abspath|dirname|pathexpand|basename|file|fileexists|fileset|filebase64|templatefile|formatdate|timeadd|timestamp|base64sha256|base64sha512|bcrypt|filebase64sha256|filebase64sha512|filemd5|filemd1|filesha256|filesha512|md5|rsadecrypt|sha1|sha256|sha512|uuid|uuidv5|cidrhost|cidrnetmask|cidrsubnet|tobool|tolist|tomap|tonumber|toset|tostring",
+              "match": "abs|ceil|floor|log|max|min|pow|signum|chomp|format|formatlist|indent|join|lower|regex|regexall|replace|split|strrev|substr|title|trimspace|upper|chunklist|coalesce|coalescelist|compact|concat|contains|distinct|element|flatten|index|keys|length|list|lookup|map|matchkeys|merge|range|reverse|set|setintersection|setproduct|setunion|slice|sort|transpose|values|zipmap|base64decode|base64encode|base64gzip|csvdecode|jsondecode|jsonencode|urlencode|yamldecode|yamlencode|abspath|dirname|pathexpand|basename|file|fileexists|fileset|filebase64|templatefile|formatdate|timeadd|timestamp|base64sha256|base64sha512|bcrypt|filebase64sha256|filebase64sha512|filemd5|filemd1|filesha256|filesha512|md5|rsadecrypt|sha1|sha256|sha512|uuid|uuidv5|cidrhost|cidrnetmask|cidrsubnet|tobool|tolist|tomap|tonumber|toset|tostring",
               "name": "support.function.builtin.terraform entity.name.function"
             },
             {
@@ -721,13 +726,13 @@
           ]
         },
         "2": {
-          "name": "punctuation.section.parens.begin.terraform entity.name.function"
+          "name": "punctuation.section.parens.begin.terraform meta.template.expression.terraform"
         }
       },
       "end": "\\)",
       "endCaptures": {
         "0": {
-          "name": "punctuation.section.parens.end.terraform entity.name.function"
+          "name": "punctuation.section.parens.end.terraform meta.template.expression.terraform"
         }
       },
       "patterns": [
@@ -750,13 +755,13 @@
       "comment": "Parens - matched *after* function syntax",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.section.parens.begin.terraform"
+          "name": "punctuation.section.parens.begin.terraform meta.template.expression.terraform"
         }
       },
       "end": "\\)",
       "endCaptures": {
         "0": {
-          "name": "punctuation.section.parens.end.terraform"
+          "name": "punctuation.section.parens.end.terraform meta.template.expression.terraform"
         }
       },
       "patterns": [
