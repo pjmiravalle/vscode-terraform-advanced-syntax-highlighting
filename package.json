@@ -1,63 +1,63 @@
 {
-	"icon": "terraform.png",
-	"name": "terraform-advanced-syntax-highlighting",
-	"displayName": "Terraform Advanced Syntax Highlighting",
-	"description": "Advanced Syntax Highlighting for all Terraform file types.",
-	"version": "1.4.0",
-	"publisher": "pjmiravalle",
-	"engines": {
-		"vscode": "^1.39.0"
-	},
-	"bugs": {
-		"url": "https://github.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting/issues",
-		"email": "4603979+pjmiravalle@users.noreply.github.com"
-	},
-	"categories": [
-		"Programming Languages",
-		"Other",
-		"Formatters",
-		"Linters"
-	],
-	"keywords": [
-		"devops",
-		"terraform",
-		"terraform syntax highlighting",
-		"syntax highlighting",
-		"hcl"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting"
-	},
-	"contributes": {
-		"languages": [
-			{
-				"id": "terraform",
-				"aliases": [
-					"Terraform",
-					"terraform"
-				],
-				"extensions": [
-					".tf",
-					".tfvars",
-					".hcl"
-				],
-				"configuration": "./language-configuration.json"
-			},
-			{
-				"id": "json",
-				"extensions": [
-					".tfstate",
-					".tpl"
-				]
-			}
-		],
-		"grammars": [
-			{
-				"language": "terraform",
-				"scopeName": "scope.terraform",
-				"path": "./syntaxes/terraform.json"
-			}
-		]
-	}
+  "icon": "terraform.png",
+  "name": "terraform-advanced-syntax-highlighting",
+  "displayName": "Terraform Advanced Syntax Highlighting",
+  "description": "Advanced Syntax Highlighting for all Terraform file types.",
+  "version": "1.4.1",
+  "publisher": "pjmiravalle",
+  "engines": {
+    "vscode": "^1.39.0"
+  },
+  "bugs": {
+    "url": "https://github.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting/issues",
+    "email": "4603979+pjmiravalle@users.noreply.github.com"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other",
+    "Formatters",
+    "Linters"
+  ],
+  "keywords": [
+    "devops",
+    "terraform",
+    "terraform syntax highlighting",
+    "syntax highlighting",
+    "hcl"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pjmiravalle/vscode-terraform-advanced-syntax-highlighting"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "terraform",
+        "aliases": [
+          "Terraform",
+          "terraform"
+        ],
+        "extensions": [
+          ".tf",
+          ".tfvars",
+          ".hcl"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "json",
+        "extensions": [
+          ".tfstate",
+          ".tpl"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "terraform",
+        "scopeName": "scope.terraform",
+        "path": "./syntaxes/terraform.json"
+      }
+    ]
+  }
 }
