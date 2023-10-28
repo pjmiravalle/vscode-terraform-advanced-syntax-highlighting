@@ -16,7 +16,7 @@ This extension has been designed and tested to either work as a standalone solut
 
 Most themes are supported by default. Just install this VS Code extension and you'll immediately see improved syntax highlighting for your Terraform files.
 
-If your theme , please take a look at the [following guide provided by VS Code](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide).
+For any theme specific issues, please take a look at the [following guide provided by VS Code](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide).
 
 ## Compatibility
 
