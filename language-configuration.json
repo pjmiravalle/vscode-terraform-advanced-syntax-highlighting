@@ -1,30 +1,13 @@
 {
   "comments": {
-    // symbol used for single line comment. Remove this entry if your language does not support line comments
-    "lineComment": [
-      "#",
-      "//"
-    ],
-    // symbols used for start and end a block comment. Remove this entry if your language does not support block comments
-    "blockComment": [
-      "/*",
-      "*/"
-    ]
+    "lineComment": "#",
+    "blockComment": ["/*", "*/"]
   },
   // symbols used as brackets
   "brackets": [
-    [
-      "{",
-      "}"
-    ],
-    [
-      "[",
-      "]"
-    ],
-    [
-      "(",
-      ")"
-    ]
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
   ],
   "autoClosingPairs": [
     {
@@ -42,40 +25,20 @@
     {
       "open": "\"",
       "close": "\"",
-      "notIn": [
-        "string"
-      ]
+      "notIn": ["string"]
     },
     {
       "open": "'",
       "close": "'",
-      "notIn": [
-        "string",
-        "comment"
-      ]
+      "notIn": ["string", "comment"]
     }
   ],
   "autoCloseBefore": ";:.,=}])> \n\t\"",
   "surroundingPairs": [
-    [
-      "{",
-      "}"
-    ],
-    [
-      "[",
-      "]"
-    ],
-    [
-      "(",
-      ")"
-    ],
-    [
-      "\"",
-      "\""
-    ],
-    [
-      "'",
-      "'"
-    ]
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["'", "'"]
   ]
 }
