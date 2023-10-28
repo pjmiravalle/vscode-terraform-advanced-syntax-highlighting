@@ -1,6 +1,6 @@
 # Terraform Advanced Syntax Highlighting
 
-**Terraform Advanced Syntax Highlighting** is a Visual Studio Code extension that dramatically improves syntax highlighting for Terraform `.tf` and `.tfvars` files in VS Code.
+**Terraform Advanced Syntax Highlighting** is a Visual Studio Code extension that dramatically improves syntax highlighting for `.tf`, `.tfvars`, and `.hcl` files in VS Code.
 
 This extension has been designed and tested to either work as a standalone solution for Terraform syntax highlighting, or alongside other extensions. Take a look at the [Compatibility](#compatibility) section for more information.
 
