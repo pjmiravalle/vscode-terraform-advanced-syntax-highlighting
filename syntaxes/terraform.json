@@ -558,7 +558,7 @@
     "for_expressions": {
       "patterns": [
         {
-          "match": "for",
+          "match": "\\bfor\\b",
           "comment": "for keyword",
           "name": "keyword.operator.word.terraform keyword.control.terraform"
         },
