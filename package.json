@@ -3,7 +3,7 @@
   "name": "terraform-advanced-syntax-highlighting",
   "displayName": "Terraform Advanced Syntax Highlighting",
   "description": "Advanced Syntax Highlighting for all Terraform file types.",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "publisher": "pjmiravalle",
   "engines": {
     "vscode": "^1.39.0"
